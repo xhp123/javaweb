@@ -7,8 +7,8 @@ spring:
     password: password
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/dbdemo?characterEncoding=utf8&useSSL=false
-    schema:
-      - classpath:db/user_scheme.sql
+    #schema:
+    #  - classpath:db/user_scheme.sql
     initialization-mode: ALWAYS
 
   thymeleaf:

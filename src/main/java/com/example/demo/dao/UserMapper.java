@@ -13,7 +13,7 @@ public interface UserMapper {
 
     int insert(User record);
 
-    User selectByPrimaryKey(Long id);
+    User selectByPrimaryKey(Integer id);
 
     List<User> selectAll();
 

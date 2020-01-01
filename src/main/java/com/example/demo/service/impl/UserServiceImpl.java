@@ -19,22 +19,23 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> findById(Long id) {
-        return (List<User>) userMapper.selectByPrimaryKey(id);
+    public User findById(Integer id) {
+        return userMapper.selectByPrimaryKey(id);
     }
 
     @Override
-    public void create(User user) {
-
+    public Integer insert(User user) {
+        return userMapper.insert(user);
     }
 
     @Override
-    public void delete(Long... ids) {
-
+    public Integer delete(Integer id) {
+        return userMapper.deleteByPrimaryKey(id);
     }
 
     @Override
-    public void update(User user) {
-
+    public Integer update(User user) {
+        return userMapper.updateByPrimaryKey(user);
     }
+
 }

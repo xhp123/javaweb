@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import com.example.demo.entity.User;
+
 import java.util.List;
 
 public interface BaseService<T>{
@@ -7,14 +9,14 @@ public interface BaseService<T>{
     List<T> findAll();
 
     //根据ID查询
-    List<T> findById(Long id);
+    T findById(Integer id);
 
     //添加
-    void create(T t);
+    Integer insert(T t);
 
-    //删除（批量）
-    void delete(Long... ids);
+    //删除
+    Integer delete(Integer id);
 
     //修改
-    void update(T t);
+    Integer update(T t);
 }
