@@ -1,0 +1,39 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    username: root
+    password: password
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dbdemo?characterEncoding=utf8&useSSL=false
+    schema:
+      - classpath:db/user_scheme.sql
+    initialization-mode: ALWAYS
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    check-template-location: true
+    suffix: .html
+    encoding: UTF-8
+    mode: LEGACYHTML5
+    cache: false
+
+    #devtools插件
+  devtools:
+    livereload:
+      enabled: true #是否支持livereload
+      port: 35729
+    restart:
+      enabled: true #是否支持热部署
+
+# mybaties 配置
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  typeAliasesPackage: com.jiafly.libra.entity
+# 通用mapper 配置 自动生成dao层代码
+mapper:
+  plugin: tk.mybatis.mapper.generator.MapperPlugin
+  Mapper: tk.mybatis.mapper.common.Mapper
+  not-empty: false
+  identity: MYSQL
